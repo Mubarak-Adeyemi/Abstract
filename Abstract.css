@@ -152,8 +152,7 @@ a.sign {
 }
 
 form {
-     /* display: block;
-     margin-top: 0em; */
+
      z-index: 4;
 }
 
@@ -275,6 +274,7 @@ h4 {
     width: 60%;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin-left: 40px;
 }
 
@@ -335,7 +335,7 @@ h4 {
 
 
 .fixed-button button img {
-    /* Change the image color to ehite */
+    /* Change the image color to white */
     filter: brightness(0) invert(1);
 
     /* Positioning the image */
@@ -366,3 +366,35 @@ h4 {
     }
 
 }
+
+
+@media (max-width: 768px ) {
+
+    
+    .ft-container .ft-aside {
+        align-self: flex-start;
+        margin-left: 50px;
+    }
+
+
+    .headtext {
+        font-size: 40px; 
+    }
+
+    article {
+        width: 250px;
+        margin: 8px;
+        font-size: 16px;
+        padding-top: 7px;
+        display: flex;
+        align-items: start;
+        
+    }
+
+    article h4 {
+        font-size: 16px;
+    }
+
+    
+}
+

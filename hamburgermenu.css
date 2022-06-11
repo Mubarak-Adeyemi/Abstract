@@ -1,0 +1,204 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================
+----------------HAMBURGER MENU-------------
+=========================================== */
+.menu-wrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    visibility: hidden;
+    width: 100%;
+}
+
+.menu-wrap .toggler {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    z-index: 2;
+    cursor: pointer;
+    width: 55px;
+    height: 30px;
+    opacity: 0;
+}
+
+.menu-wrap .hamburger {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 55px;
+    height: 30px;
+    padding: 1rem;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+
+/* ========================================
+----------------HAMBURGER LINE-------------
+=========================================== */
+
+.menu-wrap .hamburger > .line{
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease ;
+    z-index: 1;
+}
+
+/* ========================================
+------HAMBURGER TOP AND BOTTOM LINE--------
+=========================================== */
+
+.menu-wrap .hamburger > .line::before,
+.menu-wrap .hamburger > .line::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    z-index: 1;
+}
+
+
+/* ========================================
+---------HAMBURGER  BOTTOM LINE------------
+=========================================== */
+
+.menu-wrap .hamburger > .line::after {
+    top: 7px;
+}
+
+
+/* ========================================
+-----------HAMBURGER LINE ROTATE-----------
+=========================================== */
+
+.menu-wrap .toggler:checked + .hamburger > .line {
+    transform: rotate(-135deg);
+}
+
+
+.menu-wrap .toggler:checked + .hamburger > .line::before,
+.menu-wrap .toggler:checked + .hamburger > .line::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.menu-wrap .toggler:checked:hover + .hamburger > .line {
+    transform: rotate(225deg);
+}
+
+
+/* ========================================
+-------------DROP DOWN MENU----------------
+=========================================== */
+
+
+.menu-wrap .drop-down {
+    position: relative;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    height: 210px;
+    visibility: hidden;
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #888;
+    animation: all 4s ease-in-out;
+    
+}
+
+.menu-wrap .drop-down .bg1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex: none;
+}
+
+.menu-wrap .drop-down .bg1 .bg2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;    
+    
+}
+
+.menu-wrap .drop-down .bg1 .bg2 a {
+    background-color: black;
+    color: #fff;
+    font-size: 24px;
+    padding: 1rem 6rem 1.5rem;
+    align-self: center;
+    text-decoration: none;
+    
+
+
+}
+
+
+
+
+.menu-wrap .drop-down .bg1 .bg2 a:not(:last-of-type) {
+    border-bottom: 1px solid #888;
+}
+
+
+
+/* ========================================
+----------SHOW DROP DOWN MENU--------------
+=========================================== */
+
+
+
+
+
+
+@media (max-width: 1024px) {
+
+
+    .menu-wrap .toggler:checked ~ .drop-down {
+        visibility: visible;
+    }
+    
+    .menu-wrap .toggler:checked ~ .drop-down .bg1 {
+        visibility: visible;       
+    }
+
+
+    .menu-wrap {
+        position: absolute;
+        visibility: visible;
+        z-index: 20;
+        transition: all 0.4s ease-in-out;
+
+    }
+
+    .menu-wrap .drop-down .bg1 .bg2,
+    .menu-wrap .drop-down  .bg1 .bg2 a{
+        background-color: #111;
+    }
+
+}
+
+
